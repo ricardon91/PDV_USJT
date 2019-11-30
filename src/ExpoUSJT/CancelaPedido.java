@@ -28,6 +28,7 @@ public class CancelaPedido extends JFrame {
 	private int idPedido;
 	private Venda venda;
 	private Pedido pedido;
+	private TelaPrincipal telaPrincipal;
 
 	/**
 	 * Launch the application.
@@ -36,7 +37,7 @@ public class CancelaPedido extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					CancelaPedido frame = new CancelaPedido(0);
+					CancelaPedido frame = new CancelaPedido(0, new TelaPrincipal());
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -48,14 +49,14 @@ public class CancelaPedido extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public CancelaPedido(int idPedido) {
+	public CancelaPedido(int idPedido, TelaPrincipal telaPrincipal) {
 		Connection conn = Conexao.getConnection();
 
 		this.idPedido = idPedido;
 		System.out.println(idPedido + " cancela");
 		setTitle("Cancela Pedido");
 		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 295, 300);
+		setBounds(100, 100, 274, 370);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -76,23 +77,19 @@ public class CancelaPedido extends JFrame {
 
 					if (pedido.getId() != -1) {
 
-//						venda = new Venda();
-//						venda.deletarTodasVenda(conn, idPedido);
-//						
-//						
-//						pedido.deletarPedido(conn, idPedido);
-
 						pedido.exclusaoLogica(conn, idPedido);
 						conn.commit();
-
-						JOptionPane.showMessageDialog(null, "Pedido cancelado com sucesso");
+						telaPrincipal.zeraPedido();
+						JOptionPane.showMessageDialog(null, "Pedido cancelado com sucesso");					
 
 					} else {
 						JOptionPane.showMessageDialog(null, "Pedido não foi aberto");
 					}
 
 					Toolkit.getDefaultToolkit().removeAWTEventListener(listener);
+					
 					dispose();
+					
 				} catch (SQLException erro) {
 					JOptionPane.showMessageDialog(null, erro + "erro1");
 					if (conn != null) {
@@ -113,8 +110,8 @@ public class CancelaPedido extends JFrame {
 				}
 			}
 		});
-		btnSim.setIcon(new ImageIcon(CancelaPedido.class.getResource("/ImageLib/sim.jpg")));
-		btnSim.setBounds(20, 86, 150, 45);
+		btnSim.setIcon(new ImageIcon(CancelaPedido.class.getResource("/ImageLib/SIM.jpg")));
+		btnSim.setBounds(20, 86, 168, 89);
 		contentPane.add(btnSim);
 
 		JButton btnNao = new JButton("");
@@ -124,8 +121,8 @@ public class CancelaPedido extends JFrame {
 				dispose();
 			}
 		});
-		btnNao.setIcon(new ImageIcon(CancelaPedido.class.getResource("/ImageLib/nao.jpg")));
-		btnNao.setBounds(20, 187, 150, 45);
+		btnNao.setIcon(new ImageIcon(CancelaPedido.class.getResource("/ImageLib/NAO.jpg")));
+		btnNao.setBounds(20, 223, 168, 88);
 		contentPane.add(btnNao);
 
 		JLabel lblSim = new JLabel("SIM");
@@ -133,7 +130,7 @@ public class CancelaPedido extends JFrame {
 		contentPane.add(lblSim);
 
 		JLabel lblNo = new JLabel("N\u00C3O");
-		lblNo.setBounds(20, 162, 46, 14);
+		lblNo.setBounds(20, 196, 46, 14);
 		contentPane.add(lblNo);
 
 		listener = new AWTEventListener() {
@@ -145,10 +142,10 @@ public class CancelaPedido extends JFrame {
 						leitura += evt.getKeyChar();
 						if (leitura.length() == 3) {
 //				    	  lblCode.setText(leitura);
-							if (leitura.equals("sim")) {
+							if (leitura.equals("11111")) {
 								System.out.println("Sim");
 								btnSim.doClick();
-							} else if (leitura.equals("nao")) {
+							} else if (leitura.equals("00000")) {
 								System.out.println("nao");
 								btnNao.doClick();
 							}

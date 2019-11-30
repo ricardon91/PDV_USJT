@@ -40,7 +40,7 @@ public class MaisProdutos extends TelaPrincipal {
 
 		Connection conn = Conexao.getConnection();
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(750, 30, 800, 800);
+		setBounds(900, 30, 800, 800);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);

@@ -83,40 +83,10 @@ public class TelaPrincipal extends JFrame {
 
 		conn = Conexao.getConnection();
 
-		// Timer
-
-//		Toolkit.getDefaultToolkit().addAWTEventListener(new AWTEventListener() {
-//			@Override
-//			public void eventDispatched(AWTEvent event) {
-//				Object source = event.getSource();
-//				if (source instanceof Component) {
-//					Component comp = (Component) source;
-//					Window win = null;
-//					if (comp instanceof Window) {
-//						win = (Window) comp;
-//					} else {
-//						win = SwingUtilities.windowForComponent(comp);
-//					}
-//					if (win == win) {
-//						timer.restart();
-//					}
-//				}
-//			}
-//		}, AWTEvent.KEY_EVENT_MASK | AWTEvent.MOUSE_EVENT_MASK | AWTEvent.MOUSE_MOTION_EVENT_MASK
-//				| AWTEvent.MOUSE_WHEEL_EVENT_MASK);
-//
-//		timer = new Timer(500000, new ActionListener() {
-//			@Override
-//			public void actionPerformed(ActionEvent e) {
-//				zeraPedido();
-//			}
-//		});
-//		timer.start();
-
 		conteudo = "";
 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 647, 530);
+		setBounds(100, 100, 711, 618);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(null);
@@ -173,11 +143,11 @@ public class TelaPrincipal extends JFrame {
 		contentPane.add(lblMaisOpcoes);
 
 		JLabel lblTroco = new JLabel("Troco");
-		lblTroco.setBounds(507, 321, 46, 14);
+		lblTroco.setBounds(505, 309, 46, 14);
 		contentPane.add(lblTroco);
 
 		txtTroco = new JTextField();
-		txtTroco.setBounds(476, 348, 95, 37);
+		txtTroco.setBounds(476, 338, 107, 56);
 		contentPane.add(txtTroco);
 		txtTroco.setColumns(10);
 		txtTroco.setEditable(false);
@@ -246,8 +216,8 @@ public class TelaPrincipal extends JFrame {
 
 			}
 		});
-		btnFinalizar.setIcon(new ImageIcon(TelaPrincipal.class.getResource("/ImageLib/Finalizar.gif")));
-		btnFinalizar.setBounds(39, 424, 116, 56);
+		btnFinalizar.setIcon(new ImageIcon(TelaPrincipal.class.getResource("/ImageLib/FINALIZAR (22222).jpg")));
+		btnFinalizar.setBounds(39, 424, 177, 89);
 		contentPane.add(btnFinalizar);
 
 		JButton btnCancelar = new JButton("");
@@ -263,8 +233,8 @@ public class TelaPrincipal extends JFrame {
 				}
 			}
 		});
-		btnCancelar.setIcon(new ImageIcon(TelaPrincipal.class.getResource("/ImageLib/cancelar.gif")));
-		btnCancelar.setBounds(245, 424, 116, 56);
+		btnCancelar.setIcon(new ImageIcon(TelaPrincipal.class.getResource("/ImageLib/CANCELAR VENDA (33333).jpg")));
+		btnCancelar.setBounds(245, 424, 177, 89);
 		contentPane.add(btnCancelar);
 
 		JButton btnMaisOpcoes = new JButton("");
@@ -283,8 +253,8 @@ public class TelaPrincipal extends JFrame {
 				txtCodigoDeBarra.setText("");
 			}
 		});
-		btnMaisOpcoes.setIcon(new ImageIcon(TelaPrincipal.class.getResource("/ImageLib/maisopcoes.gif")));
-		btnMaisOpcoes.setBounds(476, 424, 122, 56);
+		btnMaisOpcoes.setIcon(new ImageIcon(TelaPrincipal.class.getResource("/ImageLib/MAIS OPCOES (44444).jpg")));
+		btnMaisOpcoes.setBounds(476, 424, 177, 89);
 		contentPane.add(btnMaisOpcoes);
 
 		scrollPane = new JScrollPane();
@@ -300,15 +270,15 @@ public class TelaPrincipal extends JFrame {
 		txtCodigoDeBarra.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
-				if (txtCodigoDeBarra.getText().equalsIgnoreCase("01")) {
+				if (txtCodigoDeBarra.getText().equalsIgnoreCase("22222")) {
 					btnFinalizar.doClick();
 				}
 
-				else if (txtCodigoDeBarra.getText().equalsIgnoreCase("02")) {
+				else if (txtCodigoDeBarra.getText().equalsIgnoreCase("33333")) {
 					btnCancelar.doClick();
 				}
 
-				else if (txtCodigoDeBarra.getText().equalsIgnoreCase("03")) {
+				else if (txtCodigoDeBarra.getText().equalsIgnoreCase("44444")) {
 					btnMaisOpcoes.doClick();
 				}
 

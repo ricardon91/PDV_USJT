@@ -218,27 +218,6 @@ public class Mercadoria {
 		}
 	}
 
-//	public void atualizar(Connection conn) {
-//		String comando = "update mercadoria set codigo=?, descricao=?, unidade=?, preco=? where idMercadoria=?";
-//		try (PreparedStatement pst = conn.prepareStatement(comando);) {
-//
-//			int var0 = Integer.parseInt(JOptionPane.showInputDialog("Digite o id"));
-//			String var1 = JOptionPane.showInputDialog("Digite o codigo");
-//			String var2 = JOptionPane.showInputDialog("Digite o descricao");
-//			String var3 = JOptionPane.showInputDialog("Digite o unidade");
-//			Double var4 = Double.parseDouble(JOptionPane.showInputDialog("Digite o preco"));
-//
-//			pst.setString(1, var1);
-//			pst.setString(2, var2);
-//			pst.setString(3, var3);
-//			pst.setDouble(4, var4);
-//			pst.setInt(5, var0);
-//
-//			pst.execute();
-//
-//		} catch (SQLException e) {
-//			e.printStackTrace();
-//		}
-//	}
+
 
 }

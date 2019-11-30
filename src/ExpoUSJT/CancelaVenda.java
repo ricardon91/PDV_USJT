@@ -68,7 +68,7 @@ public class CancelaVenda extends JFrame {
 
 		setTitle("Cancelar venda");
 		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 430, 302);
+		setBounds(100, 100, 457, 359);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -95,11 +95,11 @@ public class CancelaVenda extends JFrame {
 		contentPane.add(lblPreco);
 
 		JLabel lblNao = new JLabel("Cancelar");
-		lblNao.setBounds(251, 173, 73, 14);
+		lblNao.setBounds(268, 173, 73, 14);
 		contentPane.add(lblNao);
 
 		JLabel lblSim = new JLabel("Confirmar");
-		lblSim.setBounds(20, 173, 150, 14);
+		lblSim.setBounds(70, 173, 81, 14);
 		contentPane.add(lblSim);
 
 		textField = new JTextField();
@@ -201,8 +201,8 @@ public class CancelaVenda extends JFrame {
 				}
 			}
 		});
-		btnConfirma.setIcon(new ImageIcon(CancelaVenda.class.getResource("/ImageLib/sim.jpg")));
-		btnConfirma.setBounds(20, 198, 141, 54);
+		btnConfirma.setIcon(new ImageIcon(CancelaVenda.class.getResource("/ImageLib/SIM.jpg")));
+		btnConfirma.setBounds(20, 198, 173, 83);
 		contentPane.add(btnConfirma);
 
 		JButton btnCancelar = new JButton("");
@@ -212,8 +212,8 @@ public class CancelaVenda extends JFrame {
 				dispose();
 			}
 		});
-		btnCancelar.setIcon(new ImageIcon(CancelaVenda.class.getResource("/ImageLib/nao.jpg")));
-		btnCancelar.setBounds(251, 198, 141, 54);
+		btnCancelar.setIcon(new ImageIcon(CancelaVenda.class.getResource("/ImageLib/NAO.jpg")));
+		btnCancelar.setBounds(226, 198, 173, 83);
 		contentPane.add(btnCancelar);
 
 		listener = new AWTEventListener() {
@@ -225,10 +225,10 @@ public class CancelaVenda extends JFrame {
 						leitura += evt.getKeyChar();
 						if (leitura.length() == 3) {
 //				    	  lblCode.setText(leitura);
-							if (leitura.equals("sim")) {
+							if (leitura.equals("11111")) {
 								System.out.println("sim");
 								btnConfirma.doClick();
-							} else if (leitura.equals("nao")) {
+							} else if (leitura.equals("00000")) {
 								System.out.println("nao");
 								btnCancelar.doClick();
 							}

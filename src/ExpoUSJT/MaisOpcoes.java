@@ -85,7 +85,7 @@ public class MaisOpcoes extends TelaPrincipal {
 		timer.start();
 
 		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 374, 446);
+		setBounds(100, 100, 440, 611);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -102,8 +102,8 @@ public class MaisOpcoes extends TelaPrincipal {
 
 			}
 		});
-		btnCadastrar.setIcon(new ImageIcon(MaisOpcoes.class.getResource("/ImageLib/Cadastrar.jpg")));
-		btnCadastrar.setBounds(21, 22, 133, 56);
+		btnCadastrar.setIcon(new ImageIcon(MaisOpcoes.class.getResource("/ImageLib/CADASTRO (99999).jpg")));
+		btnCadastrar.setBounds(21, 22, 171, 90);
 		contentPane.add(btnCadastrar);
 
 		JButton btnDesativar = new JButton("");
@@ -115,21 +115,21 @@ public class MaisOpcoes extends TelaPrincipal {
 				dispose();
 			}
 		});
-		btnDesativar.setIcon(new ImageIcon(MaisOpcoes.class.getResource("/ImageLib/Desativar.jpg")));
-		btnDesativar.setBounds(21, 103, 133, 56);
+		btnDesativar.setIcon(new ImageIcon(MaisOpcoes.class.getResource("/ImageLib/DESATIVAR PRODUTO (88888).jpg")));
+		btnDesativar.setBounds(21, 137, 171, 86);
 		contentPane.add(btnDesativar);
 
 		JButton btnCancelarPedido = new JButton("");
 		btnCancelarPedido.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				JFrame cancelapedido = new CancelaPedido(idPedido);
+				JFrame cancelapedido = new CancelaPedido(idPedido, telaPrincipal);
 				cancelapedido.setVisible(true);
 				Toolkit.getDefaultToolkit().removeAWTEventListener(listener);
 				dispose();
 			}
 		});
-		btnCancelarPedido.setIcon(new ImageIcon(MaisOpcoes.class.getResource("/ImageLib/CancelarProduto.jpg")));
-		btnCancelarPedido.setBounds(21, 183, 133, 56);
+		btnCancelarPedido.setIcon(new ImageIcon(MaisOpcoes.class.getResource("/ImageLib/CANCELAR COMPRA (77777).jpg")));
+		btnCancelarPedido.setBounds(21, 248, 171, 86);
 		contentPane.add(btnCancelarPedido);
 
 		JButton btnAlterarPreco = new JButton("");
@@ -141,35 +141,36 @@ public class MaisOpcoes extends TelaPrincipal {
 				dispose();
 			}
 		});
-		btnAlterarPreco.setIcon(new ImageIcon(MaisOpcoes.class.getResource("/ImageLib/AlterarPreco.jpg")));
-		btnAlterarPreco.setBounds(21, 262, 133, 56);
+		btnAlterarPreco.setIcon(new ImageIcon(MaisOpcoes.class.getResource("/ImageLib/ALTERAR PREÇO (66666).jpg")));
+		btnAlterarPreco.setBounds(21, 358, 171, 83);
 		contentPane.add(btnAlterarPreco);
 
 		JLabel lblCadastrar = new JLabel("Cadastrar");
 		lblCadastrar.setFont(new Font("Arial", Font.PLAIN, 12));
-		lblCadastrar.setBounds(185, 22, 133, 29);
+		lblCadastrar.setBounds(250, 52, 133, 29);
 		contentPane.add(lblCadastrar);
 
 		JLabel lblDesativar = new JLabel("Desativar");
 		lblDesativar.setFont(new Font("Arial", Font.PLAIN, 12));
-		lblDesativar.setBounds(185, 103, 133, 29);
+		lblDesativar.setBounds(250, 165, 133, 29);
 		contentPane.add(lblDesativar);
 
 		JLabel lblCancelarPedido = new JLabel("Cancelar Compra");
 		lblCancelarPedido.setFont(new Font("Arial", Font.PLAIN, 12));
-		lblCancelarPedido.setBounds(185, 183, 133, 29);
+		lblCancelarPedido.setBounds(250, 269, 133, 29);
 		contentPane.add(lblCancelarPedido);
 
 		JLabel lblAlterarPreco = new JLabel("Alterar Pre\u00E7o");
 		lblAlterarPreco.setFont(new Font("Arial", Font.PLAIN, 12));
-		lblAlterarPreco.setBounds(185, 262, 133, 29);
+		lblAlterarPreco.setBounds(250, 385, 133, 29);
 		contentPane.add(lblAlterarPreco);
 
 		JLabel lblCode = new JLabel("");
 		lblCode.setBounds(299, 22, 46, 14);
 		contentPane.add(lblCode);
 
-		JButton btnExcel = new JButton("New button");
+		JButton btnExcel = new JButton("");
+		btnExcel.setIcon(new ImageIcon(MaisOpcoes.class.getResource("/ImageLib/EXPORTAR EXCEL (55555).jpg")));
 		btnExcel.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				JFrame excel = new ExportacaoExcel();
@@ -178,11 +179,11 @@ public class MaisOpcoes extends TelaPrincipal {
 				dispose();
 			}
 		});
-		btnExcel.setBounds(21, 349, 89, 23);
+		btnExcel.setBounds(21, 458, 171, 82);
 		contentPane.add(btnExcel);
 
 		JLabel lblNewLabel = new JLabel("Gerar Arquivo");
-		lblNewLabel.setBounds(185, 353, 100, 14);
+		lblNewLabel.setBounds(250, 496, 100, 14);
 		contentPane.add(lblNewLabel);
 
 		listener = new AWTEventListener() {
@@ -194,19 +195,19 @@ public class MaisOpcoes extends TelaPrincipal {
 						leitura += evt.getKeyChar();
 						if (leitura.length() == 2) {
 					    	  
-							if (leitura.equals("04")) {
+							if (leitura.equals("99999")) {
 								System.out.println("Cadastra");
 								btnCadastrar.doClick();
-							} else if (leitura.equals("05")) {
+							} else if (leitura.equals("88888")) {
 								System.out.println("Desativa");
 								btnDesativar.doClick();
-							} else if (leitura.equals("06")) {
+							} else if (leitura.equals("77777")) {
 								System.out.println("Cancela produto");
 								btnCancelarPedido.doClick();
-							} else if (leitura.equals("07")) {
+							} else if (leitura.equals("66666")) {
 								System.out.println("Altera preço");
 								btnAlterarPreco.doClick();
-							} else if (leitura.equals("08")) {
+							} else if (leitura.equals("55555")) {
 								System.out.println("Gerar XLS");
 								btnExcel.doClick();
 							}
