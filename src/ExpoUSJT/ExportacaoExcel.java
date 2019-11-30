@@ -153,24 +153,7 @@ public class ExportacaoExcel extends JFrame {
 			WritableFont font = new WritableFont(WritableFont.ARIAL, 12, WritableFont.BOLD);
 			headerFormat.setFont(font);
 			headerFormat.setBackground(Colour.LIGHT_BLUE);
-			headerFormat.setWrap(true);
-			
-
-//			private int idPedido;
-//			private java.sql.Date data;
-//			private int totalItens;
-//			private double totalPedido;
-//			private boolean cancelado;
-//			private int idvenda;
-//			private int quantidade;
-//			private double preco;
-//			private int idMercadoria;
-//			private String codigo;
-//			private String descricao;
-//			private String unidade;
-//			private java.sql.Date dataAtualizacao;
-//			private boolean ativo;
-//			private boolean codigoExiste;
+			headerFormat.setWrap(true);			
 
 			Label headerLabel = new Label(0, 0, "ID Pedido", headerFormat);
 			sheet.setColumnView(0, 60);

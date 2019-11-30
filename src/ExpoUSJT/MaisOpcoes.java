@@ -222,6 +222,5 @@ public class MaisOpcoes extends TelaPrincipal {
 		};
 
 		Toolkit.getDefaultToolkit().addAWTEventListener(listener, AWTEvent.KEY_EVENT_MASK);
-
 	}
 }
